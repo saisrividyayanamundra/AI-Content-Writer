@@ -1,0 +1,132 @@
+/* ===============================
+   MAIN MESSAGE WINDOW
+================================ */
+.message-window {
+  margin-left: 50px;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease;
+  overflow: hidden; 
+}
+
+/* When sidebar opens */
+.message-window.shifted {
+  margin-left: 220px; /* same as sidebar width */
+}
+
+/* ===============================
+   HEADER
+================================ */
+.message-header {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+    flex-shrink: 0;
+
+}
+
+/* ===============================
+   MESSAGE LIST AREA
+================================ */
+.message-body {
+  flex: 1;
+  padding: 100px;
+  overflow-y: auto;
+    min-height: 0;
+    
+  /* IMPORTANT for left/right */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ===============================
+   COMMON MESSAGE BUBBLE
+================================ */
+.message {
+  max-width: 60%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+/* USER MESSAGE → RIGHT */
+.message.user {
+  align-self: flex-end;
+  background-color: #dcf8c6;
+}
+
+/* AGENT MESSAGE → LEFT */
+.message.agent {
+  align-self: flex-start;
+  background-color: #f7f7f8;
+}
+.message-input textarea {
+  width: 420px;
+  padding: 14px 18px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+
+  resize: none;           /* ❌ no manual resize */
+  overflow-y: auto;       /* ✅ scroll only if needed */
+  white-space: pre-wrap;  /* ✅ wrap text */
+  word-break: break-word; /* ✅ break long words */
+
+  max-height: 150px;      /* limit growth */
+}
+
+/* ===============================
+   INPUT SECTION
+================================ */
+.message-input {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+    flex-shrink: 0;
+
+}
+
+/* Center input (no messages yet) */
+.center-input {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Bottom input (after messages) */
+.bottom-input {
+  border-top: 1px solid #e5e5e5;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+/* Input field */
+.message-input input {
+  width: 420px;            /* ⬅️ wider */
+  padding: 14px 18px;      /* ⬅️ taller */
+  border-radius: 999px;    /* ⬅️ pill shape */
+  border: 1px solid #ccc;
+  font-size: 16px;         /* ⬅️ readable */
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.message-input button {
+  padding: 12px 18px;
+  border-radius: 999px;   /* round button */
+  background-color: #00acf7;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+    border: 1px solid #ccc;
+
+
+}
